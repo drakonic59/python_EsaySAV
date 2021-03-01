@@ -2,8 +2,9 @@ import pytest
 import uuid
 from unittest import mock
 
-from EasySAV.EasySAV.Domain.Intervention import Intervention
-from EasySAV.EasySAV.Use_cases.Intervention_list_use_case import InterventionUseCase
+from EasySAV.Domain.Intervention import Intervention
+from EasySAV.Use_cases.Intervention_list_use_case import InterventionUseCase
+
 
 @pytest.fixture()
 def domain_interventions():
@@ -32,6 +33,7 @@ def domain_interventions():
         probleme="Ecran bleu au démarrage"
     )
     return [interv1, interv2, interv3, interv4]
+
 
 def test_intervention_liste_sans_parametre(domain_interventions):
     repo = mock.Mock()

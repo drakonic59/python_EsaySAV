@@ -1,8 +1,8 @@
 from typing import Dict
 
 
-from EasySAV.EasySAV.Use_cases.Intervention_list_use_case import *
-from EasySAV.EasySAV.Repository.Memrepo import *
+from EasySAV.Use_cases.Intervention_list_use_case import *
+from EasySAV.Repository.Memrepo import *
 
 # Alimentation de la base de données en mémoire
 intervention1 = {

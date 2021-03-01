@@ -1,9 +1,9 @@
 from flask import Flask, Response
 import json
 
-from EasySAV.EasySAV.Use_cases.Intervention_list_use_case import *
-from EasySAV.EasySAV.Repository.Memrepo import *
-from EasySAV.EasySAV.Serializers.intervention_json_serializer import InterventionJsonEncoder
+from EasySAV.Use_cases.Intervention_list_use_case import *
+from EasySAV.Repository.Memrepo import *
+from EasySAV.Serializers.intervention_json_serializer import InterventionJsonEncoder
 
 
 app = Flask(__name__)

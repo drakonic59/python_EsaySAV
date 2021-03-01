@@ -1,5 +1,6 @@
-from EasySAV.EasySAV.Domain.Intervention import Intervention
+from EasySAV.Domain.Intervention import Intervention
 from typing import List
+
 
 class Technicien(object):
 

@@ -1,5 +1,6 @@
 import uuid
-from EasySAV.EasySAV.Domain.Intervention import Intervention
+from EasySAV.Domain.Intervention import Intervention
+
 
 def test_intervention_model_init():
     code = uuid.uuid4()
@@ -8,6 +9,7 @@ def test_intervention_model_init():
     assert intervention.ref_client == "IA42"
     assert intervention.piece == "Lave linge"
     assert intervention.probleme == "fuite"
+
 
 def test_intervention_model_from_dict():
     code = uuid.uuid4()

@@ -1,7 +1,8 @@
 import pytest
 
-from EasySAV.EasySAV.Domain.Intervention import Intervention
-from EasySAV.EasySAV.Repository.Memrepo import MemRepo
+from EasySAV.Domain.Intervention import Intervention
+from EasySAV.Repository.Memrepo import MemRepo
+
 
 @pytest.fixture
 def interventions_dicts():
@@ -31,6 +32,7 @@ def interventions_dicts():
             "probleme": "résistance"
         }
     ]
+
 
 def test_repository_list_sans_parametre(interventions_dicts):
     repo = MemRepo(interventions_dicts)

@@ -1,7 +1,8 @@
 import json
 import uuid
-from EasySAV.EasySAV.Serializers.intervention_json_serializer import InterventionJsonEncoder
-from EasySAV.EasySAV.Domain.Intervention import Intervention
+from EasySAV.Serializers.intervention_json_serializer import InterventionJsonEncoder
+from EasySAV.Domain.Intervention import Intervention
+
 
 def test_serialize_domain_intervention():
     code = uuid.uuid4()

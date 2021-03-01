@@ -1,4 +1,5 @@
-from EasySAV.EasySAV.Domain.Intervention import Intervention
+from EasySAV.Domain.Intervention import Intervention
+
 
 class MemRepo:
     def __init__(self, data):
