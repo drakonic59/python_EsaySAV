@@ -28,7 +28,7 @@ intervention3 = {
 
 
 repo = MemRepo([intervention1, intervention2, intervention3])
-use_case = InterventionUseCase(repo)
+use_case = InterventionListUseCase(repo)
 liste_interventions = use_case.execute()
 
 for i in liste_interventions:

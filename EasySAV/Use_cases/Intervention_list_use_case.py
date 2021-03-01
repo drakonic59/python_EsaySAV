@@ -1,4 +1,4 @@
-class InterventionUseCase:
+class InterventionListUseCase:
     def __init__(self, repo):
         self.repo = repo
 

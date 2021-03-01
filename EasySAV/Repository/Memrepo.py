@@ -7,3 +7,6 @@ class MemRepo:
 
     def list(self):
         return [Intervention.from_dict(i) for i in self.data]
+
+    def save(self, inter):
+        self.data.append(inter)
