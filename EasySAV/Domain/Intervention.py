@@ -30,4 +30,4 @@ class Intervention:
                f"Code : {self.code} \n" \
                f"Référence Client : {self.ref_client} \n" \
                f"Pièce à diagnostiquer : {self.piece} \n" \
-               f"Panne : {self.probleme} \n" \
+               f"Panne : {self.probleme} \n"

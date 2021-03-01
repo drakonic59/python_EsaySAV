@@ -39,5 +39,6 @@ def interventions():
     return Response(json.dumps(liste_interventions, cls=InterventionJsonEncoder),
                     mimetype='application/json', status=200)
 
+
 if __name__ == '__main__':
     app.run()
