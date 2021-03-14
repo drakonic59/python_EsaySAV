@@ -1,4 +1,4 @@
-from flask import Flask, Response, request
+from flask import Flask, Response, request, jsonify
 import json
 
 from EasySAV.Use_cases.Intervention_list_use_case import *
@@ -6,6 +6,7 @@ from EasySAV.Use_cases.Intervention_add_use_case import *
 from EasySAV.Domain.Intervention import Intervention
 from EasySAV.Repository.Memrepo import *
 from EasySAV.Serializers.intervention_json_serializer import InterventionJsonEncoder
+from EasySAV.Repository.DataBaseRepo import *
 
 
 app = Flask(__name__)
@@ -35,11 +36,10 @@ intervention3 = {
 
 @app.route('/interventions', methods=['GET'])
 def interventions():
-    repo = MemRepo([intervention1, intervention2, intervention3])
+    repo = DataBaseRepo("Database.db")
     use_case = InterventionListUseCase(repo)
     liste_interventions = use_case.execute()
-    return Response(json.dumps(liste_interventions, cls=InterventionJsonEncoder),
-                    mimetype='application/json', status=200)
+    return jsonify(liste_interventions)
 
 
 @app.route('/add', methods=['POST'])
