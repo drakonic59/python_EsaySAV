@@ -24,3 +24,20 @@ class DataBaseRepo:
         for row in self.cursor:
             res.append(Intervention(row[0], row[1], row[2], row[3]).to_dict())
         return res
+
+    def save(self, new_intervention):
+        client = new_intervention["ref_client"]
+        piece = new_intervention["piece"]
+        problem = new_intervention["probleme"]
+
+        sql = f"insert into intervention(" \
+              f" ref_client," \
+              f" piece," \
+              f" probleme)"\
+              f"Values('{client}',"\
+              f"'{piece}',"\
+              f"'{problem}'"\
+              f")"
+        self.execute(sql)
+        self.conn.commit()
+        return 200
