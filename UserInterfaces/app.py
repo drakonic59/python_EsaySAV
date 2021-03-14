@@ -4,6 +4,7 @@ from EasySAV.Use_cases.Intervention_list_use_case import *
 from EasySAV.Use_cases.Intervention_add_use_case import *
 from EasySAV.Repository.DataBaseRepo import *
 
+DBAccess = "D:/school/python_EsaySAV/UserInterfaces/Database.db"
 
 app = Flask(__name__)
 
@@ -32,7 +33,7 @@ intervention3 = {
 
 @app.route('/interventions', methods=['GET'])
 def interventions():
-    repo = DataBaseRepo("Database.db")
+    repo = DataBaseRepo(DBAccess)
     use_case = InterventionListUseCase(repo)
     liste_interventions = use_case.execute()
     return jsonify(liste_interventions)
@@ -42,7 +43,7 @@ def interventions():
 def add_intervention():
     try :
         new_intervention = request.get_json(force=True)
-        repo = DataBaseRepo("Database.db")
+        repo = DataBaseRepo(DBAccess)
         use_case = InterventionSaveUseCase(repo, new_intervention)
         response = use_case.execute()
 
